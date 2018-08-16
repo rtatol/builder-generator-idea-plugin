@@ -192,23 +192,7 @@ public class BuilderPsiClassBuilderTest {
         // given
         PsiMethod method = mock(PsiMethod.class);
         given(elementFactory.createMethodFromText(
-                "public static " + builderClassName + " a" + srcClassName + "() { return new " + builderClassName + "(); }", srcClass)).willReturn(method);
-
-        // when
-        psiClassBuilder.aBuilder(context).withInitializingMethod();
-
-        // then
-        verify(builderClass).add(method);
-    }
-
-    @Test
-    public void shouldAddInitializingMethodStartingWithAnIfSourceClassNameStartsWithVowel() {
-        // given
-        PsiMethod method = mock(PsiMethod.class);
-        String srcClassNameStartingWithVowel = "Inventory";
-        given(srcClass.getName()).willReturn(srcClassNameStartingWithVowel);
-        given(elementFactory.createMethodFromText(
-                "public static " + builderClassName + " an" + srcClassNameStartingWithVowel + "() { return new " + builderClassName + "(); }", srcClass)).willReturn(method);
+                "public static " + builderClassName + " builder" + "() { return new " + builderClassName + "(); }", srcClass)).willReturn(method);
 
         // when
         psiClassBuilder.aBuilder(context).withInitializingMethod();

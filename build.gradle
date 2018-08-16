@@ -4,8 +4,8 @@ apply from: 'idea.gradle'
 apply plugin: 'checkstyle'
 
 // --- properties ---
-ext.ideaInstallationPath = 'C:/Users/Michal/AppData/Local/JetBrains/Toolbox/apps/IDEA-C/ch-0/171.4249.39'
-ext.ideaJdk = 'IntelliJ IDEA Community Edition IC-171.4249.39'
+ext.ideaInstallationPath = '/home/raf/opt/idea-IU-182.3684.101'
+ext.ideaJdk = 'IntelliJ IDEA Ultimate Edition IU-182.3684.101'
 sourceCompatibility = 1.8
 // --- properties ---
 
@@ -27,7 +27,7 @@ dependencies {
 
 jar {
     metaInf {
-        from('/META-INF') {
+        from('./META-INF') {
             include 'plugin.xml'
         }
     }
